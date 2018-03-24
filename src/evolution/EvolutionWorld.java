@@ -107,6 +107,7 @@ public final class EvolutionWorld extends JPanel implements Runnable, MouseListe
         //init random seed. This is used in varous classes
         rand = new Random(System.currentTimeMillis());
 
+        /*
         //These writers are used to recored empirical data about the agent
         try {
             scoreFile = new BufferedWriter(new FileWriter(new File("score" + fileCount + ".txt")));
@@ -114,6 +115,7 @@ public final class EvolutionWorld extends JPanel implements Runnable, MouseListe
         } catch (IOException ex) {
             Logger.getLogger(EvolutionWorld.class.getName()).log(Level.SEVERE, null, ex);
         }
+        */
 
         //init agents
         agentList = new ArrayList<>();
@@ -492,7 +494,7 @@ public final class EvolutionWorld extends JPanel implements Runnable, MouseListe
             for (Agent agent : agentList) {
                 if (agent.getBounds().contains(dx, dy)) {
                     screenControls.followTarget(agent);
-                    agent.startRecordingBrainActivity(brainActivity);
+                    //agent.startRecordingBrainActivity(brainActivity);
                     break;
                 }
             }
